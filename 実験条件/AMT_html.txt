@@ -1,0 +1,1372 @@
+<!-- You must include this JavaScript file -->
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<p>The time required for this task will be 10-30 minutes. The task is to respond to a given image at several stages of preference according to the indicated criteria.
+<br>No personal information will be collected in this experiment. 
+<br>Response data will be collected for research purposes and stored at the University of Tsukuba. The results of the analysis will be published as an academic paper. 
+<br>Please participate only if you agree to these conditions. You may stop this task at any time during the course of the study, in which case the data will be discarded. 
+<br>Please note that you will be deemed to have given your final consent to participate when you have completed your answers and submitted your data. </p>
+<p>This research has been approved by the University of Tsukuba Library, Information and Media Science Research Ethics Review Committee.</p>
+
+<p>[Contact] 
+<br>Institute of Library, Information and Media Science University of Tsukuba Hiroyoshi Ito, 
+<br>College of Knowledge and Library Sciences, School of Informatics, University of Tsukuba Shintaro Saito. 
+<br>E-mail: mlabexperiments@mlab.info </p>
+
+
+<p>There are 158 questions in total. 
+<br>(4 questions about individuals, 24 questions about smartphone color preferences, 24 questions about car color preferences, 25 questions about avatar phisique, 81 questions about avatar face)</p>
+
+<p>There is no correct answer, so please answer subjectively</p>
+
+<p style="color: red;">Note:
+<br>Please answer all questions (but No.4 MBTI questions are optional). You will need to answer all questions except No.4 to receive the reward. 
+<br>Also, please answer so that your preference values are clearly divided. (It is preferable to use all values and hierarchies)
+<br>Please be aware that you may not be able to receive compensation if they are all the same or almost the same value.</p>
+
+
+<!-- You must include crowd-form so that your task submits answers to MTurk -->
+<crowd-form answer-format="flatten-objects">
+    
+    <div>
+        <p><big>No.1</big></p>
+        <label for="gender-select">What is your gender?:</label>
+            <select name="gender" id="gender-select" required>
+                <option value="">--Please choose an option--</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+                <option value="no_answer">Prefer not to answer</option>
+            </select>
+    </div>
+    </br>
+    <div>
+        <p><big>No.2</big></p>
+        <label for="age-select">What is your age?:</label>
+            <select name="age" id="age-select" required>
+                <option value="">--Please choose an option--</option>
+                <option value="under_18">Under 18</option>
+                <option value="18_24">18-24</option>
+                <option value="25_34">25-34</option>
+                <option value="35_44">35-44</option>
+                <option value="45_54">45-54</option>
+                <option value="55_64">55-64</option>
+                <option value="65_over">65 and over</option>
+            </select>
+    </div>
+    </br>
+    <div>
+        <p><big>No.3</big></p>
+        <label for="region-select">What is your region?:</label>
+            <select name="region" id="region-select" required>
+                <option value="">--Please choose an option--</option>
+                <option value="north_america">North America</option>
+                <option value="central_america">Central America</option>
+                <option value="south_america">South America</option>
+                <option value="europe">Europe</option>
+                <option value="africa">Africa</option>
+                <option value="middle_east">Middle East</option>
+                <option value="central_asia">Central Asia</option>
+                <option value="east_asia">East Asia</option>
+                <option value="south_asia">South Asia</option>
+                <option value="southeast_asia">Southeast Asia</option>
+                <option value="oceania">Oceania</option>
+                <option value="caribbean">Caribbean</option>
+            </select>
+    </div>
+    </br>
+    <div>
+        <p><big>No.4</big></p>
+        <label for="mbti-select">What is your MBTI? (Please answer only those who know your MBTI):</label>
+            <select name="mbti" id="mbti-select" required>
+                <option value="">--Please choose an option--</option>
+                <option value="istj">ISTJ</option>
+                <option value="isfj">ISFJ</option>
+                <option value="infj">INFJ</option>
+                <option value="intj">INTJ</option>
+                <option value="istp">ISTP</option>
+                <option value="isfp">ISFP</option>
+                <option value="infp">INFP</option>
+                <option value="intp">INTP</option>
+                <option value="estp">ESTP</option>
+                <option value="esfp">ESFP</option>
+                <option value="enfp">ENFP</option>
+                <option value="entp">ENTP</option>
+                <option value="estj">ESTJ</option>
+                <option value="esfj">ESFJ</option>
+                <option value="enfj">ENFJ</option>
+                <option value="entj">ENTJ</option>
+            </select>
+    </div>
+    </br>
+    
+    <hr size="5" color="black">
+    <p><big>No.5~No.28</big>
+    <br>24 questions about smartphone color preferences. These colors change hue and saturation.
+    <br>Think about whether you want to own it and use it.
+    <br>please answer so that your preference values are clearly divided.</p>
+    <p>If you really want to use it → 6~7<br>If you want to use it → 4~5<br>If you want to use it a little bit → 2~3<br>if you don't want to use it → 1</p>
+　  
+　  <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.5</big></p>
+        <img src="${image_url_5}" width="333" height="333">
+　　    <div>
+  　     <crowd-slider name="intensity_5" min="1" max="7" step="1" pin="true" required></crowd-slider>
+　      </div>
+　  </div>
+　  <hr size="5" color="black">
+　  <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.6</big></p>
+        <img src="${image_url_6}" width="333" height="333">
+　　    <div>
+  　     <crowd-slider name="intensity_6" min="1" max="7" step="1" pin="true" required></crowd-slider>
+　      </div>
+　  </div>
+　  <hr size="5" color="black">
+　  <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.7</big></p>
+        <img src="${image_url_7}" width="333" height="333">
+　　    <div>
+  　     <crowd-slider name="intensity_7" min="1" max="7" step="1" pin="true" required></crowd-slider>
+　      </div>
+　  </div>
+　  <hr size="5" color="black">
+　  <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.8</big></p>
+        <img src="${image_url_8}" width="333" height="333">
+　　    <div>
+  　     <crowd-slider name="intensity_8" min="1" max="7" step="1" pin="true" required></crowd-slider>
+　      </div>
+　  </div>
+　  <hr size="5" color="black">
+　  <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.9</big></p>
+        <img src="${image_url_9}" width="333" height="333">
+　　    <div>
+  　     <crowd-slider name="intensity_9" min="1" max="7" step="1" pin="true" required></crowd-slider>
+　      </div>
+　  </div>
+　  <hr size="5" color="black">
+　  <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.10</big></p>
+        <img src="${image_url_10}" width="333" height="333">
+　　    <div>
+  　     <crowd-slider name="intensity_10" min="1" max="7" step="1" pin="true" required></crowd-slider>
+　      </div>
+　  </div>
+　  <hr size="5" color="black">
+　  <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.11</big></p>
+        <img src="${image_url_11}" width="333" height="333">
+　　    <div>
+  　     <crowd-slider name="intensity_11" min="1" max="7" step="1" pin="true" required></crowd-slider>
+　      </div>
+　  </div>
+　  <hr size="5" color="black">
+　  <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.12</big></p>
+        <img src="${image_url_12}" width="333" height="333">
+　　    <div>
+  　     <crowd-slider name="intensity_12" min="1" max="7" step="1" pin="true" required></crowd-slider>
+　      </div>
+　  </div>
+　  <hr size="5" color="black">
+　  <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.13</big></p>
+        <img src="${image_url_13}" width="333" height="333">
+　　    <div>
+  　     <crowd-slider name="intensity_13" min="1" max="7" step="1" pin="true" required></crowd-slider>
+　      </div>
+　  </div>
+　  <hr size="5" color="black">
+　  <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.14</big></p>
+        <img src="${image_url_14}" width="333" height="333">
+　　    <div>
+  　     <crowd-slider name="intensity_14" min="1" max="7" step="1" pin="true" required></crowd-slider>
+　      </div>
+　  </div>
+　  <hr size="5" color="black">
+　  <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.15</big></p>
+        <img src="${image_url_15}" width="333" height="333">
+　　    <div>
+  　     <crowd-slider name="intensity_15" min="1" max="7" step="1" pin="true" required></crowd-slider>
+　      </div>
+　  </div>
+　  <hr size="5" color="black">
+　  <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.16</big></p>
+        <img src="${image_url_16}" width="333" height="333">
+　　    <div>
+  　     <crowd-slider name="intensity_16" min="1" max="7" step="1" pin="true" required></crowd-slider>
+　      </div>
+　  </div>
+　  <hr size="5" color="black">
+　  <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.17</big></p>
+        <img src="${image_url_17}" width="333" height="333">
+　　    <div>
+  　     <crowd-slider name="intensity_17" min="1" max="7" step="1" pin="true" required></crowd-slider>
+　      </div>
+　  </div>
+　  <hr size="5" color="black">
+　  <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.18</big></p>
+        <img src="${image_url_18}" width="333" height="333">
+　　    <div>
+  　     <crowd-slider name="intensity_18" min="1" max="7" step="1" pin="true" required></crowd-slider>
+　      </div>
+　  </div>
+　  <hr size="5" color="black">
+　  <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.19</big></p>
+        <img src="${image_url_19}" width="333" height="333">
+　　    <div>
+  　     <crowd-slider name="intensity_19" min="1" max="7" step="1" pin="true" required></crowd-slider>
+　      </div>
+　  </div>
+　  <hr size="5" color="black">
+　  <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.20</big></p>
+        <img src="${image_url_20}" width="333" height="333">
+　　    <div>
+  　     <crowd-slider name="intensity_20" min="1" max="7" step="1" pin="true" required></crowd-slider>
+　      </div>
+　  </div>
+　  <hr size="5" color="black">
+　  <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.21</big></p>
+        <img src="${image_url_21}" width="333" height="333">
+　　    <div>
+  　     <crowd-slider name="intensity_21" min="1" max="7" step="1" pin="true" required></crowd-slider>
+　      </div>
+　  </div>
+　  <hr size="5" color="black">
+　  <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.22</big></p>
+        <img src="${image_url_22}" width="333" height="333">
+　　    <div>
+  　     <crowd-slider name="intensity_22" min="1" max="7" step="1" pin="true" required></crowd-slider>
+　      </div>
+　  </div>
+　  <hr size="5" color="black">
+　  <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.23</big></p>
+        <img src="${image_url_23}" width="333" height="333">
+　　    <div>
+  　     <crowd-slider name="intensity_23" min="1" max="7" step="1" pin="true" required></crowd-slider>
+　      </div>
+　  </div>
+　  <hr size="5" color="black">
+　  <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.24</big></p>
+        <img src="${image_url_24}" width="333" height="333">
+　　    <div>
+  　     <crowd-slider name="intensity_24" min="1" max="7" step="1" pin="true" required></crowd-slider>
+　      </div>
+　  </div>
+　  <hr size="5" color="black">
+　  <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.25</big></p>
+        <img src="${image_url_25}" width="333" height="333">
+　　    <div>
+  　     <crowd-slider name="intensity_25" min="1" max="7" step="1" pin="true" required></crowd-slider>
+　      </div>
+　  </div>
+　  <hr size="5" color="black">
+　  <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.26</big></p>
+        <img src="${image_url_26}" width="333" height="333">
+　　    <div>
+  　     <crowd-slider name="intensity_26" min="1" max="7" step="1" pin="true" required></crowd-slider>
+　      </div>
+　  </div>
+　  <hr size="5" color="black">
+　  <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.27</big></p>
+        <img src="${image_url_27}" width="333" height="333">
+　　    <div>
+  　     <crowd-slider name="intensity_27" min="1" max="7" step="1" pin="true" required></crowd-slider>
+　      </div>
+　  </div>
+　  <hr size="5" color="black">
+　  <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.28</big></p>
+        <img src="${image_url_28}" width="333" height="333">
+　　    <div>
+  　     <crowd-slider name="intensity_28" min="1" max="7" step="1" pin="true" required></crowd-slider>
+　      </div>
+　  </div>
+　  <hr size="5" color="black">
+　  
+    <p><big>No.29~No.52</big>
+    <br>24 questions about car color preferences. These colors change hue and brightness.
+    <br>Think about whether you want to ride(or own) it
+    <br>please answer so that your preference values are clearly divided.</p>
+    <p>If you really want to ride it → 6~7<br>If you want to ride it → 4~5<br>If you want to ride it a little bit → 2~3<br>if you don't want to ride it → 1</p>
+　  
+　  <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+    <p><big>No.29</big></p>
+    <img src="${image_url_29}" width="600" height="333">
+    <div>
+        <crowd-slider name="intensity_29" min="1" max="7" step="1" pin="true" required></crowd-slider>
+    </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.30</big></p>
+        <img src="${image_url_30}" width="600" height="333">
+        <div>
+            <crowd-slider name="intensity_30" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.31</big></p>
+        <img src="${image_url_31}" width="600" height="333">
+        <div>
+            <crowd-slider name="intensity_31" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.32</big></p>
+        <img src="${image_url_32}" width="600" height="333">
+        <div>
+            <crowd-slider name="intensity_32" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.33</big></p>
+        <img src="${image_url_33}" width="600" height="333">
+        <div>
+            <crowd-slider name="intensity_33" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.34</big></p>
+        <img src="${image_url_34}" width="600" height="333">
+        <div>
+            <crowd-slider name="intensity_34" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.35</big></p>
+        <img src="${image_url_35}" width="600" height="333">
+        <div>
+            <crowd-slider name="intensity_35" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.36</big></p>
+        <img src="${image_url_36}" width="600" height="333">
+        <div>
+            <crowd-slider name="intensity_36" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.37</big></p>
+        <img src="${image_url_37}" width="600" height="333">
+        <div>
+            <crowd-slider name="intensity_37" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.38</big></p>
+        <img src="${image_url_38}" width="600" height="333">
+        <div>
+            <crowd-slider name="intensity_38" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.39</big></p>
+        <img src="${image_url_39}" width="600" height="333">
+        <div>
+            <crowd-slider name="intensity_39" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.40</big></p>
+        <img src="${image_url_40}" width="600" height="333">
+        <div>
+            <crowd-slider name="intensity_40" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.41</big></p>
+        <img src="${image_url_41}" width="600" height="333">
+        <div>
+            <crowd-slider name="intensity_41" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.42</big></p>
+        <img src="${image_url_42}" width="600" height="333">
+        <div>
+            <crowd-slider name="intensity_42" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.43</big></p>
+        <img src="${image_url_43}" width="600" height="333">
+        <div>
+            <crowd-slider name="intensity_43" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.44</big></p>
+        <img src="${image_url_44}" width="600" height="333">
+        <div>
+            <crowd-slider name="intensity_44" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.45</big></p>
+        <img src="${image_url_45}" width="600" height="333">
+        <div>
+            <crowd-slider name="intensity_45" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.46</big></p>
+        <img src="${image_url_46}" width="600" height="333">
+        <div>
+            <crowd-slider name="intensity_46" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.47</big></p>
+        <img src="${image_url_47}" width="600" height="333">
+        <div>
+            <crowd-slider name="intensity_47" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.48</big></p>
+        <img src="${image_url_48}" width="600" height="333">
+        <div>
+            <crowd-slider name="intensity_48" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.49</big></p>
+        <img src="${image_url_49}" width="600" height="333">
+        <div>
+            <crowd-slider name="intensity_49" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.50</big></p>
+        <img src="${image_url_50}" width="600" height="333">
+        <div>
+            <crowd-slider name="intensity_50" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.51</big></p>
+        <img src="${image_url_51}" width="600" height="333">
+        <div>
+            <crowd-slider name="intensity_51" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.52</big></p>
+        <img src="${image_url_52}" width="600" height="333">
+        <div>
+            <crowd-slider name="intensity_52" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+
+
+    <p><big>No.53~No.77</big>
+    <br>25 questions about avatar phisique preferences. These avatars are changing their height and width.
+    <br>There are avatars for men and women, but they are the same height and width, so please think about whether you want to use them as your own avatar according to your gender.
+    <br>please answer so that your preference values are clearly divided.</p>
+    <p>If you really want to use it → 6~7<br>If you want to use it → 4~5<br>If you want to use it a little bit → 2~3<br>if you don't want to use it → 1</p>
+
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+    <p><big>No.53</big></p>
+    <img src="${image_url_53}" width="333" height="333"><img src="${image_url_163}" width="333" height="333">
+    <div>
+        <crowd-slider name="intensity_53" min="1" max="7" step="1" pin="true" required></crowd-slider>
+    </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.54</big></p>
+        <img src="${image_url_54}" width="333" height="333"><img src="${image_url_164}" width="333" height="333">
+        <div>
+            <crowd-slider name="intensity_54" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.55</big></p>
+        <img src="${image_url_55}" width="333" height="333"><img src="${image_url_165}" width="333" height="333">
+        <div>
+            <crowd-slider name="intensity_55" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.56</big></p>
+        <img src="${image_url_56}" width="333" height="333"><img src="${image_url_166}" width="333" height="333">
+        <div>
+            <crowd-slider name="intensity_56" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.57</big></p>
+        <img src="${image_url_57}" width="333" height="333"><img src="${image_url_167}" width="333" height="333">
+        <div>
+            <crowd-slider name="intensity_57" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.58</big></p>
+        <img src="${image_url_58}" width="333" height="333"><img src="${image_url_168}" width="333" height="333">
+        <div>
+            <crowd-slider name="intensity_58" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.59</big></p>
+        <img src="${image_url_59}" width="333" height="333"><img src="${image_url_169}" width="333" height="333">
+        <div>
+            <crowd-slider name="intensity_59" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.60</big></p>
+        <img src="${image_url_60}" width="333" height="333"><img src="${image_url_170}" width="333" height="333">
+        <div>
+            <crowd-slider name="intensity_60" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.61</big></p>
+        <img src="${image_url_61}" width="333" height="333"><img src="${image_url_171}" width="333" height="333">
+        <div>
+            <crowd-slider name="intensity_61" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.62</big></p>
+        <img src="${image_url_62}" width="333" height="333"><img src="${image_url_172}" width="333" height="333">
+        <div>
+            <crowd-slider name="intensity_62" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.63</big></p>
+        <img src="${image_url_63}" width="333" height="333"><img src="${image_url_173}" width="333" height="333">
+        <div>
+            <crowd-slider name="intensity_63" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.64</big></p>
+        <img src="${image_url_64}" width="333" height="333"><img src="${image_url_174}" width="333" height="333">
+        <div>
+            <crowd-slider name="intensity_64" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.65</big></p>
+        <img src="${image_url_65}" width="333" height="333"><img src="${image_url_175}" width="333" height="333">
+        <div>
+            <crowd-slider name="intensity_65" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.66</big></p>
+        <img src="${image_url_66}" width="333" height="333"><img src="${image_url_176}" width="333" height="333">
+        <div>
+            <crowd-slider name="intensity_66" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.67</big></p>
+        <img src="${image_url_67}" width="333" height="333"><img src="${image_url_177}" width="333" height="333">
+        <div>
+            <crowd-slider name="intensity_67" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.68</big></p>
+        <img src="${image_url_68}" width="333" height="333"><img src="${image_url_178}" width="333" height="333">
+        <div>
+            <crowd-slider name="intensity_68" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.69</big></p>
+        <img src="${image_url_69}" width="333" height="333"><img src="${image_url_179}" width="333" height="333">
+        <div>
+            <crowd-slider name="intensity_69" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.70</big></p>
+        <img src="${image_url_70}" width="333" height="333"><img src="${image_url_180}" width="333" height="333">
+        <div>
+            <crowd-slider name="intensity_70" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.71</big></p>
+        <img src="${image_url_71}" width="333" height="333"><img src="${image_url_181}" width="333" height="333">
+        <div>
+            <crowd-slider name="intensity_71" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.72</big></p>
+        <img src="${image_url_72}" width="333" height="333"><img src="${image_url_182}" width="333" height="333">
+        <div>
+            <crowd-slider name="intensity_72" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.73</big></p>
+        <img src="${image_url_73}" width="333" height="333"><img src="${image_url_183}" width="333" height="333">
+        <div>
+            <crowd-slider name="intensity_73" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.74</big></p>
+        <img src="${image_url_74}" width="333" height="333"><img src="${image_url_184}" width="333" height="333">
+        <div>
+            <crowd-slider name="intensity_74" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.75</big></p>
+        <img src="${image_url_75}" width="333" height="333"><img src="${image_url_185}" width="333" height="333">
+        <div>
+            <crowd-slider name="intensity_75" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.76</big></p>
+        <img src="${image_url_76}" width="333" height="333"><img src="${image_url_186}" width="333" height="333">
+        <div>
+            <crowd-slider name="intensity_76" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.77</big></p>
+        <img src="${image_url_77}" width="333" height="333"><img src="${image_url_187}" width="333" height="333">
+        <div>
+            <crowd-slider name="intensity_77" min="1" max="7" step="1" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+
+    <p><big>No.78~No.158</big>
+    <br>81 questions about avatar face preferences. 
+    <br>These avatars change the width of the eyes, the vertical width of the eyes, the height of the corners of the eyes, and the inclination of eyebrows.
+    <br>If you make your avatar face, which face you want to use?
+    <br>please answer so that your preference values are clearly divided.</p>
+    <p>If you really want to use it → 76~100<br>If you want to use it → 51~75<br>If you want to use it a little bit → 26~50<br>if you don't want to use it → 1~25</p>
+
+
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.78</big></p>
+        <img src="${image_url_78}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_78" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.79</big></p>
+        <img src="${image_url_79}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_79" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.80</big></p>
+        <img src="${image_url_80}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_80" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.81</big></p>
+        <img src="${image_url_81}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_81" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.82</big></p>
+        <img src="${image_url_82}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_82" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.83</big></p>
+        <img src="${image_url_83}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_83" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.84</big></p>
+        <img src="${image_url_84}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_84" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.85</big></p>
+        <img src="${image_url_85}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_85" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.86</big></p>
+        <img src="${image_url_86}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_86" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.87</big></p>
+        <img src="${image_url_87}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_87" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.88</big></p>
+        <img src="${image_url_88}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_88" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.89</big></p>
+        <img src="${image_url_89}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_89" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.90</big></p>
+        <img src="${image_url_90}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_90" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.91</big></p>
+        <img src="${image_url_91}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_91" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.92</big></p>
+        <img src="${image_url_92}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_92" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.93</big></p>
+        <img src="${image_url_93}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_93" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.94</big></p>
+        <img src="${image_url_94}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_94" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.95</big></p>
+        <img src="${image_url_95}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_95" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.96</big></p>
+        <img src="${image_url_96}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_96" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.97</big></p>
+        <img src="${image_url_97}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_97" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.98</big></p>
+        <img src="${image_url_98}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_98" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.99</big></p>
+        <img src="${image_url_99}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_99" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.100</big></p>
+        <img src="${image_url_100}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_100" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.101</big></p>
+        <img src="${image_url_101}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_101" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.102</big></p>
+        <img src="${image_url_102}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_102" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.103</big></p>
+        <img src="${image_url_103}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_103" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.104</big></p>
+        <img src="${image_url_104}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_104" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.105</big></p>
+        <img src="${image_url_105}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_105" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.106</big></p>
+        <img src="${image_url_106}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_106" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.107</big></p>
+        <img src="${image_url_107}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_107" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.108</big></p>
+        <img src="${image_url_108}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_108" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.109</big></p>
+        <img src="${image_url_109}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_109" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.110</big></p>
+        <img src="${image_url_110}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_110" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.111</big></p>
+        <img src="${image_url_111}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_111" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.112</big></p>
+        <img src="${image_url_112}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_112" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.113</big></p>
+        <img src="${image_url_113}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_113" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.114</big></p>
+        <img src="${image_url_114}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_114" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.115</big></p>
+        <img src="${image_url_115}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_115" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.116</big></p>
+        <img src="${image_url_116}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_116" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.117</big></p>
+        <img src="${image_url_117}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_117" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.118</big></p>
+        <img src="${image_url_118}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_118" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.119</big></p>
+        <img src="${image_url_119}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_119" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.120</big></p>
+        <img src="${image_url_120}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_120" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.121</big></p>
+        <img src="${image_url_121}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_121" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.122</big></p>
+        <img src="${image_url_122}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_122" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.123</big></p>
+        <img src="${image_url_123}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_123" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.124</big></p>
+        <img src="${image_url_124}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_124" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.125</big></p>
+        <img src="${image_url_125}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_125" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.126</big></p>
+        <img src="${image_url_126}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_126" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.127</big></p>
+        <img src="${image_url_127}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_127" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.128</big></p>
+        <img src="${image_url_128}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_128" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.129</big></p>
+        <img src="${image_url_129}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_129" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.130</big></p>
+        <img src="${image_url_130}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_130" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.131</big></p>
+        <img src="${image_url_131}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_131" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.132</big></p>
+        <img src="${image_url_132}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_132" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.133</big></p>
+        <img src="${image_url_133}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_133" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.134</big></p>
+        <img src="${image_url_134}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_134" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.135</big></p>
+        <img src="${image_url_135}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_135" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.136</big></p>
+        <img src="${image_url_136}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_136" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.137</big></p>
+        <img src="${image_url_137}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_137" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.138</big></p>
+        <img src="${image_url_138}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_138" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.139</big></p>
+        <img src="${image_url_139}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_139" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.140</big></p>
+        <img src="${image_url_140}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_140" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.141</big></p>
+        <img src="${image_url_141}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_141" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.142</big></p>
+        <img src="${image_url_142}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_142" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.143</big></p>
+        <img src="${image_url_143}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_143" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.144</big></p>
+        <img src="${image_url_144}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_144" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.145</big></p>
+        <img src="${image_url_145}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_145" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.146</big></p>
+        <img src="${image_url_146}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_146" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.147</big></p>
+        <img src="${image_url_147}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_147" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.148</big></p>
+        <img src="${image_url_148}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_148" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.149</big></p>
+        <img src="${image_url_149}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_149" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.150</big></p>
+        <img src="${image_url_150}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_150" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.151</big></p>
+        <img src="${image_url_151}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_151" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.152</big></p>
+        <img src="${image_url_152}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_152" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.153</big></p>
+        <img src="${image_url_153}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_153" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.154</big></p>
+        <img src="${image_url_154}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_154" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.155</big></p>
+        <img src="${image_url_155}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_155" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.156</big></p>
+        <img src="${image_url_156}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_156" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.157</big></p>
+        <img src="${image_url_157}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_157" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+    <div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #ff6699 solid 3px; font-size: 100%; padding: 20px;">
+        <p><big>No.158</big></p>
+        <img src="${image_url_158}" width="333" height="444">
+        <div>
+            <crowd-slider name="intensity_158" min="1" max="100" pin="true" required></crowd-slider>
+        </div>
+    </div>
+    <hr size="5" color="black">
+
+
+
+
+
+  <p>After confirming that you have answered all the questions, press the SUBMIT button.</p>
+</crowd-form>
