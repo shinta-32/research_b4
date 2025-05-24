@@ -183,8 +183,16 @@ def CBOT_1(answer_format, num_answer, num_of_answer, mu, sigma, x_trains_1dim, y
     c_mu_total = np.zeros_like(c_mu_t[0])  # 全体の期待値を初期化
     for t_idx in range(len(cluster_membership_rate[source_cluster_id])):
         membership_ratios[t_idx] = cluster_membership_rate[source_cluster_id][t_idx] / sum(cluster_membership_rate[source_cluster_id])
-        c_mu_total += membership_ratios[t_idx] * c_mu_t[t_idx]  # 要素ごとの積を計算して合計
+        # c_mu_total += membership_ratios[t_idx] * c_mu_t[t_idx]  # 要素ごとの積を計算して合計
 
+        # --- 正規化処理（min-maxスケーリング） ---
+        minmax_c_mu = c_mu_t[t_idx]
+        if np.max(minmax_c_mu) == np.min(minmax_c_mu):
+            normalized_c_mu = np.ones_like(minmax_c_mu) * 0.5  # すべて同じ値の場合は0.5で統一
+        else:
+            normalized_c_mu = (minmax_c_mu - np.min(minmax_c_mu)) / (np.max(minmax_c_mu) - np.min(minmax_c_mu))
+        c_mu_total += membership_ratios[t_idx] * normalized_c_mu
+        
     print('source_cluster_id', source_cluster_id)
     print('cluster_membership_rate', cluster_membership_rate)
     print('membership_ratios', membership_ratios)
@@ -217,7 +225,7 @@ def CBOT_1(answer_format, num_answer, num_of_answer, mu, sigma, x_trains_1dim, y
 def CBOT_2(answer_format, num_answer, num_of_answer, mu, sigma, x_trains_1dim, y_train, c_mu_t, i, cluster_membership_rate, source_cluster_id, membership_ratios,  mu_truth_t):
     # alpha_1 = 1
     # alpha_2 = 1
-    k = 1
+    k = 0.01
 
     alpha_1 = 10 * 10 ** (-4 * num_answer / num_of_answer)
     alpha_2 =  5 * 10 ** (-1.15 * num_answer / num_of_answer)
@@ -241,7 +249,15 @@ def CBOT_2(answer_format, num_answer, num_of_answer, mu, sigma, x_trains_1dim, y
     membership_sum = np.sum(membership_updates)  # 全体の総和を計算
     for j in range(len(membership_ratios)):
         membership_ratios[j] = membership_updates[j] / membership_sum  # 正規化して確率化
-        c_mu_total += membership_ratios[j] * c_mu_t[j]  # 要素ごとの積を計算して合計
+        # c_mu_total += membership_ratios[j] * c_mu_t[j]  # 要素ごとの積を計算して合計
+
+        # --- 正規化処理（min-maxスケーリング） ---
+        minmax_c_mu = c_mu_t[j]
+        if np.max(minmax_c_mu) == np.min(minmax_c_mu):
+            normalized_c_mu = np.ones_like(minmax_c_mu) * 0.5  # すべて同じ値の場合は0.5で統一
+        else:
+            normalized_c_mu = (minmax_c_mu - np.min(minmax_c_mu)) / (np.max(minmax_c_mu) - np.min(minmax_c_mu))
+        c_mu_total += membership_ratios[j] * normalized_c_mu
 
     print('membership_ratios', membership_ratios)
 

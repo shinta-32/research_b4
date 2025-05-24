@@ -19,7 +19,7 @@ np.warnings = warnings
 #何のデータセット使用するか決める
 # color_phone, color_car, Mii_physique, avatar_face　の4つ
 answer_format_s = "avatar_face" #ソースドメイン
-answer_format_t = "color_phone" #ターゲットドメイン
+answer_format_t = "color_car"  #ターゲットドメイン
 #実験を何周回すか決める
 NUM_OF_ITERATION = 7
 #一人に対して何回問い合わせするか決める
@@ -36,7 +36,7 @@ NUM_OF_PEOPLE = 300
 #--------------------------------------------------------------------------------------
 
 folder_path_s = os.path.dirname(os.path.abspath(__file__)) + '/exp_2412(result)/avatar'
-folder_path_t = os.path.dirname(os.path.abspath(__file__)) + '/exp_2412(result)/phone'  
+folder_path_t = os.path.dirname(os.path.abspath(__file__)) + '/exp_2412(result)/car'  
 
 from function_org import (
     get_train_data,
@@ -72,6 +72,9 @@ representative_point_t = get_point_list_one_dim(answer_format_t)
 #最終的なMAPVを入れるリストを作成する
 MAPV = []
 
+#全部のクラスタリングの様子を入れる
+All_Cluster = []
+
 #centersの解空間を表した点のリスト
 point_list_s = get_point_list(answer_format_s)
 point_list_s = np.array(point_list_s)
@@ -89,7 +92,7 @@ for a in range(NUM_OF_ITERATION):
     random.shuffle(file_list_s)
 
     #ソースドメインを元にファイルリスト（ターゲットドメイン）を入手する(jsonファイルのみを対象)
-    file_list_t = [f.replace('_avatar.json', '_phone.json') for f in file_list_s if os.path.exists(os.path.join(folder_path_t, f.replace('_avatar.json', '_phone.json')))]
+    file_list_t = [f.replace('_avatar.json', '_car.json') for f in file_list_s if os.path.exists(os.path.join(folder_path_t, f.replace('_avatar.json', '_car.json')))]
 
     #各イテレーションごとに再使用する変数を設定・初期化する
     APV = []  #一人一人の問い合わせごとの嗜好値を格納（ターゲット）
@@ -97,7 +100,9 @@ for a in range(NUM_OF_ITERATION):
     mu_r_s = []  #GPRで予測されたすべての点での期待値を格納（ソース）
     mu_points_t = []  #一人の代表点ごとの期待値を格納　クラスタリングに活用（ターゲット）
     mu_r_t = []  #GPRで予測されたすべての点での期待値を格納(ターゲット)
-    cluster_membership_rate = []  #クラスタの所属率を保存する
+    cluster_membership_rate = []  #クラスタの所属人数を保存する
+
+    Cluster = [] #クラスタリングの様子を入れる
 
     #１イテレーションの処理に入る
     for i in range(NUM_OF_PEOPLE):
@@ -237,8 +242,8 @@ for a in range(NUM_OF_ITERATION):
                 if t == 0:
                     max_idx_t, membership_ratios = CBOT_1(answer_format_t, t, NUM_OF_ANSWER, mu_t, sigma_t, x_trains_1dim_t, y_train_t, c_mu_t, i, cluster_membership_rate, source_cluster_id)
                 else:
-                    # max_idx_t = CBOT_2(answer_format_t, t, NUM_OF_ANSWER, mu_t, sigma_t, x_trains_1dim_t, y_train_t, c_mu_t, i, cluster_membership_rate, source_cluster_id, membership_ratios, mu_truth_t)
-                    max_idx_t = CBO(answer_format_t, t, NUM_OF_ANSWER, mu_t, sigma_t, x_trains_1dim_t, y_train_t, c_mu_t) 
+                    max_idx_t = CBOT_2(answer_format_t, t, NUM_OF_ANSWER, mu_t, sigma_t, x_trains_1dim_t, y_train_t, c_mu_t, i, cluster_membership_rate, source_cluster_id, membership_ratios, mu_truth_t)
+                    # max_idx_t = CBO(answer_format_t, t, NUM_OF_ANSWER, mu_t, sigma_t, x_trains_1dim_t, y_train_t, c_mu_t) 
 
             x_trains_1dim_t.append(max_idx_t)
 
@@ -322,12 +327,16 @@ for a in range(NUM_OF_ITERATION):
 
                   if s == t:
                       cluster_membership_rate[source_cluster_id][target_cluster_id] += 1
+            Cluster.append(cluster_membership_rate)
 
     #250(241)人分のAPVの平均をとったMPAV（リスト形式）をMPAVリストの末尾に追加する
     APV_mean = np.mean(APV, axis=0)
     APV_mean = APV_mean.tolist()
     MAPV.append(APV_mean)
     print("MAPV", MAPV)
+
+    All_Cluster.append(Cluster)
+    print("All_Cluster", All_Cluster)
 
 #全イテレーションのMAPVの平均をとる。 
 MAPV_mean = np.mean(MAPV, axis=0)
@@ -339,11 +348,12 @@ print("MAPV_mean_list", MAPV_mean_list)
 # 取得したMAPV_meanとMAPVをまとめて保存する
 result = {
     "MAPV_mean": MAPV_mean_list,
-    "MAPV": MAPV
+    "MAPV": MAPV,
+    "All_cluster": All_Cluster
 }
 
 #取得したMAPV_meanをtest_mapv.jsonに保存する
-with open("log/CBOT_avatar_to_phone_t1ratio_t2CBO_x5.json", "w") as f:
+with open("log3/CBOT_avatar_to_car_t1ratio_t2_x5_k001_minmaxfourth.json", "w") as f:
   json.dump(result, f, indent=4)   
 
 
